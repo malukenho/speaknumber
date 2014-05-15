@@ -51,7 +51,7 @@ class Speak
             '1' => 'unidade',
             '2' => 'zentos',
             '3' => 'cento',
-            '4' => 'mil',
+            '4' => 'mil'
         );
 
         $centenas = array(
