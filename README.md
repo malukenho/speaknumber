@@ -10,7 +10,7 @@ Exemplo simples pra uso:
 <?php
 require 'Speak.php';
 
-$number = new \Number\Speak(8926);
+$number = new \Speak\Number(8926);
 echo $number->speak();
 
 // oito mil novecentos e vinte e seis
