@@ -1,9 +1,23 @@
 <?php
-namespace Number;
+namespace Speak;
 
 use InvalidArgumentException;
-
-class Speak
+/**
+ * TODO:
+ * 
+ * $number = new Speak\Number;
+ * $number->speak(123); // centro e vinte três
+ * 
+ * $number->count(); // cem + vinte + três
+ * 
+ * $number->setDecorator(new Real);
+ * $number->speak(150); // Cento e cinquenta REAIS
+ * 
+ * $number->removeDecorator(new Real);
+ * 
+ * 
+ */
+class Number
 {
 
     public function __construct($number)
@@ -97,3 +111,6 @@ class Speak
         return $result;
     }
 }
+
+$number = new Number(4897);
+echo $number->speak();
