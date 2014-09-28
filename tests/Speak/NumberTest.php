@@ -1,6 +1,6 @@
 <?php
 
-use Speak\Number;
+namespace Speak;
 
 class NumberTest extends \PHPUnit_Framework_TestCase
 {
