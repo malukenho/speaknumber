@@ -68,7 +68,7 @@ class Number
             '4' => 'mil'
         );
 
-        $centenas = array(
+        $hundreds = array(
             '1' => 'cento',
             '2' => 'duzentos',
             '3' => 'trezentos',
@@ -100,7 +100,7 @@ class Number
         $result .= $homes[strlen($this->_number)]. ' ';
 
         if ($this->_number[1] != 0) {
-            $result .= $centenas[$this->_number[1]];
+            $result .= $hundreds[$this->_number[1]];
         }
 
         if ($this->_number[2] != 0 and !isset($numbers[ltrim($this->_number[2].$this->_number[3], 0)])) {
