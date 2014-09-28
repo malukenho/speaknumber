@@ -1,9 +1,5 @@
 <?php
 
-chdir(__DIR__);
-
-require '../../src/Speak/Number.php';
-
 use Speak\Number;
 
 class NumberTest extends \PHPUnit_Framework_TestCase
@@ -11,34 +7,41 @@ class NumberTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Passe um valor numérico para a classe
+     * @expectedException Speak\Speller\Exception\NumberIsTooLargeException
      */
-    public function instantiationWithInvalidNumberShouldThrowAnException()
+    public function speakWithBigNumberShouldThrowException()
     {
-        $number = new Number('##');
+        $number = new Number();
+        $number->speak(PHP_INT_MAX * 2);
     }
 
     /**
      * @test
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Só é suportado números com 4 dígitos
+     * @expectedException Speak\Speller\Exception\NegativeNotAllowedException
      */
-    public function instantiationWithUnsupportedLengthNumberShouldThrowAnException()
+    public function speakWithNegativeNumberShouldThrownException()
     {
-        $number = new Number('99999');
+        $number = new Number();
+        $number->speak(-1);
     }
 
     /**
      * @test
+     * @dataProvider provideTranscriptions
      */
-    public function speakShouldReturnStringRepresentationOfNumber()
+    public function speakShouldReturnStringRepresentationOfTheGivenNumber($number, $transcription)
     {
-        $number = new Number('1234');
+        $this->assertEquals($transcription, (new Number())->speak($number));
+    }
 
-        $this->assertEquals(
-            'um mil duzentos e trinta e quatro',
-            $number->speak()
-        );
+    public function provideTranscriptions()
+    {
+        return [
+            [1234, 'um mil duzentos e trinta e quatro'],
+            [100, 'cem'],
+            [1500, 'um mil e quinhentos'],
+            [10000, 'dez mil'],
+            [9856, 'nove mil oitocentos e cinquenta e seis']
+        ];
     }
 }
