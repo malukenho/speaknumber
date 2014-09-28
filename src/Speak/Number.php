@@ -4,18 +4,18 @@ namespace Speak;
 use InvalidArgumentException;
 /**
  * TODO:
- * 
+ *
  * $number = new Speak\Number;
  * $number->speak(123); // centro e vinte três
- * 
+ *
  * $number->count(); // cem + vinte + três
- * 
+ *
  * $number->setDecorator(new Real);
  * $number->speak(150); // Cento e cinquenta REAIS
- * 
+ *
  * $number->removeDecorator(new Real);
- * 
- * 
+ *
+ *
  */
 class Number
 {
@@ -68,7 +68,7 @@ class Number
             '4' => 'mil'
         );
 
-        $centenas = array(
+        $hundreds = array(
             '1' => 'cento',
             '2' => 'duzentos',
             '3' => 'trezentos',
@@ -100,7 +100,7 @@ class Number
         $result .= $homes[strlen($this->_number)]. ' ';
 
         if ($this->_number[1] != 0) {
-            $result .= $centenas[$this->_number[1]];
+            $result .= $hundreds[$this->_number[1]];
         }
 
         if ($this->_number[2] != 0 and !isset($numbers[ltrim($this->_number[2].$this->_number[3], 0)])) {
@@ -112,5 +112,3 @@ class Number
     }
 }
 
-$number = new Number(4897);
-echo $number->speak();
