@@ -11,7 +11,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
     /**
      * {@inheritDoc}
      */
-    public function format($number)
+    protected function format($number)
     {
         $return     = [];
         $number     = number_format((int) $number, 0, '.', '.');

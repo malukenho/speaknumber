@@ -31,7 +31,7 @@ class IntlNumberSpeller extends AbstractNumberSpeller
     /**
      * {@inheritDoc}
      */
-    public function format($number)
+    protected function format($number)
     {
         $formatter = new NumberFormatter($this->locale, NumberFormatter::SPELLOUT);
         return $formatter->format($number);

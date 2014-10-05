@@ -12,7 +12,7 @@ abstract class AbstractNumberSpeller implements NumberSpellerInterface
     /**
      * @see NumberSpellerInterface::spell()
      */
-    abstract public function format($number);
+    abstract protected function format($number);
 
     /**
      * {@inheritDoc}
