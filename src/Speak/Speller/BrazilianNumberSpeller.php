@@ -2,34 +2,17 @@
 
 namespace Speak\Speller;
 
-use Speak\NumberSpellerInterface;
-use Speak\Speller\Exception\NumberIsTooLargeException;
-use Speak\Speller\Exception\NegativeNotAllowedException;
-
 /**
  * @author Andrey K. Vital <andreykvital@gmail.com>
  */
-class BrazilianNumberSpeller implements NumberSpellerInterface
+class BrazilianNumberSpeller extends AbstractNumberSpeller
 {
 
     /**
      * {@inheritDoc}
-     *
-     * @throws NegativeNotAllowedException se o número fornecido for um número negativo.
-     * @throws NumberIsTooLargeException se o número fornecido for muito grande (> PHP_INT_MAX).
      */
-    public function spell($number)
+    public function format($number)
     {
-        if ($number < 0) {
-            throw new NegativeNotAllowedException('Números negativos não são aceitos.');
-        }
-
-        if ($number > PHP_INT_MAX) {
-            throw new NumberIsTooLargeException(
-                sprintf('O número fornecido %s é muito grande.', $number)
-            );
-        }
-
         $return     = [];
         $number     = number_format((int) $number, 0, '.', '.');
         $separator  = $this->getSeparator();
