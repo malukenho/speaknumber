@@ -2,6 +2,8 @@
 
 namespace Speak;
 
+use Speak\Speller\BrazilianNumberSpeller;
+
 class NumberTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -11,7 +13,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function speakWithBigNumberShouldThrowException()
     {
-        $number = new Number();
+        $number = new Number(new BrazilianNumberSpeller());
         $number->speak(PHP_INT_MAX * 2);
     }
 
@@ -21,7 +23,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function speakWithNegativeNumberShouldThrownException()
     {
-        $number = new Number();
+        $number = new Number(new BrazilianNumberSpeller());
         $number->speak(-1);
     }
 
@@ -31,7 +33,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function speakShouldReturnStringRepresentationOfTheGivenNumber($number, $transcription)
     {
-        $this->assertEquals($transcription, (new Number())->speak($number));
+        $this->assertEquals($transcription, (new Number(new BrazilianNumberSpeller()))->speak($number));
     }
 
     public function provideTranscriptions()
