@@ -1,6 +1,8 @@
 <?php
 
-namespace Speak;
+namespace Speak\Test;
+
+use Speak\Number;
 
 class IntlNumberSpellerTest extends \PHPUnit_Framework_TestCase
 {
@@ -34,15 +36,16 @@ class IntlNumberSpellerTest extends \PHPUnit_Framework_TestCase
      */
     public function speakShouldStringRepresentationOfTheGivenNumber($number, $transcription)
     {
-        $this->assertEquals($transcription, (new Number())->speak($number));
+        $object = new Number();
+        $this->assertEquals($transcription, $object->speak($number));
     }
 
     public function provideDeutschTranscriptions()
     {
-        return [
-            [1234, 'ein­tausend­zwei­hundert­vier­und­dreißig'],
-            [100, 'ein­hundert'],
-            [9888, 'neun­tausend­acht­hundert­acht­und­achtzig']
-        ];
+        return array(
+            array(1234, 'ein­tausend­zwei­hundert­vier­und­dreißig'),
+            array(100, 'ein­hundert'),
+            array(9888, 'neun­tausend­acht­hundert­acht­und­achtzig')
+        );
     }
 }

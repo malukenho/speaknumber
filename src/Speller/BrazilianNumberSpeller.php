@@ -13,9 +13,9 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
      */
     protected function format($number)
     {
-        $return     = [];
-        $number     = number_format((int) $number, 0, '.', '.');
-        $separator  = $this->getSeparator();
+        $return = array();
+        $number = number_format((int)$number, 0, '.', '.');
+        $separator = $this->getSeparator();
 
         if ($number == 0) {
             return 'zero';
@@ -28,7 +28,8 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
                 continue;
             }
 
-            $exponent = $this->getExponents()[$idx];
+            $exponents = $this->getExponents();
+            $exponent = $exponents[$idx];
             $exponent = ($chunk > 1)
                 ? str_replace('ão', 'ões', $exponent)
                 : $exponent;
@@ -60,25 +61,27 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
     private function getTokensFor($chunk)
     {
         if (false == $chunk) {
-            return [];
+            return array();
         }
 
         if ($chunk == 100) {
-            return ['cem'];
+            return array('cem');
         }
 
         if (($chunk < 20) && ($chunk > 10)) {
-            return (array) $this->getContractions()[$chunk % 10];
+            $contractions = $this->getContractions();
+            return (array)$contractions[$chunk % 10];
         }
 
         $x = strlen($chunk) - 1;
-        $y = $chunk{ 0 };
+        $y = $chunk{0};
 
-        $word = $this->getDictionary()[$x][$y];
+        $dictionary = $this->getDictionary();
+        $word = $dictionary[$x][$y];
         $next = substr($chunk, 1);
 
         return array_merge(
-            (array) $word,
+            (array)$word,
             $this->getTokensFor($next)
         );
     }
@@ -88,7 +91,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
      */
     private function getExponents()
     {
-        return [
+        return array(
             null,
             'mil',
             'milhão',
@@ -101,7 +104,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
             'octilhão',
             'nonilhão',
             'decilhão'
-        ];
+        );
     }
 
     /**
@@ -109,7 +112,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
      */
     private function getContractions()
     {
-        return [
+        return array(
             null,
             'onze',
             'doze',
@@ -120,7 +123,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
             'dezessete',
             'dezoito',
             'dezenove'
-        ];
+        );
     }
 
     /**
@@ -128,8 +131,8 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
      */
     private function getDictionary()
     {
-        return [
-            [
+        return array(
+            array(
                 null,
                 'um',
                 'dois',
@@ -140,7 +143,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
                 'sete',
                 'oito',
                 'nove'
-            ], [
+            ), array(
                 null,
                 'dez',
                 'vinte',
@@ -151,7 +154,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
                 'setenta',
                 'oitenta',
                 'noventa'
-            ], [
+            ), array(
                 null,
                 'cento',
                 'duzentos',
@@ -162,8 +165,8 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
                 'setecentos',
                 'oitocentos',
                 'novecentos'
-            ]
-        ];
+            )
+        );
     }
 
     /**
