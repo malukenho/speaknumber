@@ -1,7 +1,8 @@
 <?php
 
-namespace Speak;
+namespace Speak\Test;
 
+use Speak\Number;
 use Speak\Speller\BrazilianNumberSpeller;
 
 class NumberTest extends \PHPUnit_Framework_TestCase
@@ -9,7 +10,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Speak\Speller\Exception\NumberIsTooLargeException
+     * @expectedException \Speak\Speller\Exception\NumberIsTooLargeException
      */
     public function speakWithBigNumberShouldThrowException()
     {
@@ -19,7 +20,7 @@ class NumberTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Speak\Speller\Exception\NegativeNotAllowedException
+     * @expectedException \Speak\Speller\Exception\NegativeNotAllowedException
      */
     public function speakWithNegativeNumberShouldThrownException()
     {
@@ -33,17 +34,20 @@ class NumberTest extends \PHPUnit_Framework_TestCase
      */
     public function speakShouldReturnStringRepresentationOfTheGivenNumber($number, $transcription)
     {
-        $this->assertEquals($transcription, (new Number(new BrazilianNumberSpeller()))->speak($number));
+        $speller = new BrazilianNumberSpeller();
+        $speaker = new Number($speller);
+
+        $this->assertEquals($transcription, $speaker->speak($number));
     }
 
     public function provideTranscriptions()
     {
-        return [
-            [1234, 'um mil duzentos e trinta e quatro'],
-            [100, 'cem'],
-            [1500, 'um mil e quinhentos'],
-            [10000, 'dez mil'],
-            [9856, 'nove mil oitocentos e cinquenta e seis']
-        ];
+        return array(
+            array(1234, 'um mil duzentos e trinta e quatro'),
+            array(100, 'cem'),
+            array(1500, 'um mil e quinhentos'),
+            array(10000, 'dez mil'),
+            array(9856, 'nove mil oitocentos e cinquenta e seis')
+        );
     }
 }
