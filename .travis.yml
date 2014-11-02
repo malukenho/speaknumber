@@ -6,5 +6,5 @@ php:
 
 script:
   - composer install
-  - phpunit
+  - ./vendor/bin/phpunit --colors tests/
   - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./tests/
