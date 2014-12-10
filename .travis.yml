@@ -7,15 +7,12 @@ php:
   - hhvm
   - hhvm-nightly
 
-before_script:
-  - sh .travis.install.sh
-
 script:
-  - ./vendor/bin/phpunit
+  - composer install
+  - phpunit
   - ./vendor/bin/phpcs --standard=PSR2 ./src/ ./tests/
 
 matrix:
   allow_failures:
     - php: hhvm
     - php: hhvm-nightly
-
