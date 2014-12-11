@@ -1,5 +1,7 @@
 # Speak Number
 
+[![Build Status](https://travis-ci.org/malukenho/speaknumber.svg?branch=master)](https://travis-ci.org/malukenho/speaknumber)
+
 ### Porque?
 
 Você já se deu conta de como *cegos* navegam hoje na internet? já precisou adaptar algo em seu sistema para algum deficiente?
