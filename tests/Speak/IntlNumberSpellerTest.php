@@ -4,7 +4,6 @@ namespace Speak;
 
 class IntlNumberSpellerTest extends \PHPUnit_Framework_TestCase
 {
-
     protected function assertPreConditions()
     {
         if (!extension_loaded('intl')) {
@@ -12,17 +11,11 @@ class IntlNumberSpellerTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    /**
-     * @return void
-     */
     protected function setUp()
     {
         locale_set_default('de_DE');
     }
 
-    /**
-     * @return void
-     */
     protected function tearDown()
     {
         locale_set_default('pt_BR');
