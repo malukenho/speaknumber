@@ -7,7 +7,6 @@ namespace Speak;
  */
 interface NumberSpellerInterface
 {
-
     /**
      * @return string
      */

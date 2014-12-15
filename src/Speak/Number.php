@@ -7,9 +7,11 @@ use Speak\Speller\BrazilianNumberSpeller;
 
 class Number implements SpellerAwareInterface
 {
-
     use SpellerAwareTrait;
 
+    /**
+     * @param NumberSpellerInterface|null $speller
+     */
     public function __construct(NumberSpellerInterface $speller = null)
     {
         $this->setSpeller(
@@ -26,6 +28,7 @@ class Number implements SpellerAwareInterface
     }
 
     /**
+     * @param  NumberSpellerInterface|null $speller
      * @return NumberSpellerInterface
      */
     private function getDefaultSpeller($speller = null)

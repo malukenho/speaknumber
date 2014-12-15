@@ -6,7 +6,6 @@ use Speak\Speller\BrazilianNumberSpeller;
 
 class NumberTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @test
      * @expectedException Speak\Speller\Exception\NumberIsTooLargeException

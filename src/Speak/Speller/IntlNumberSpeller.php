@@ -10,7 +10,6 @@ use RuntimeException;
  */
 class IntlNumberSpeller extends AbstractNumberSpeller
 {
-
     /**
      * @var string
      */

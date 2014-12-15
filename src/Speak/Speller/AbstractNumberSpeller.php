@@ -8,7 +8,6 @@ use Speak\Speller\Exception\NegativeNotAllowedException;
 
 abstract class AbstractNumberSpeller implements NumberSpellerInterface
 {
-
     /**
      * @see NumberSpellerInterface::spell()
      */

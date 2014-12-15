@@ -7,7 +7,6 @@ namespace Speak;
  */
 trait SpellerAwareTrait
 {
-
     /**
      * @var NumberSpellerInterface
      */

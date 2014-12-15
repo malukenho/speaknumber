@@ -7,7 +7,6 @@ namespace Speak\Speller;
  */
 class BrazilianNumberSpeller extends AbstractNumberSpeller
 {
-
     /**
      * {@inheritDoc}
      */

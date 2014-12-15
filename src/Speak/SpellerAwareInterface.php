@@ -7,7 +7,6 @@ namespace Speak;
  */
 interface SpellerAwareInterface
 {
-
     /**
      * @param NumberSpellerInterface $speller speller to be used.
      */
