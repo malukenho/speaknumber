@@ -1,7 +1,7 @@
 # Speak Number
 
 [![Build Status](https://travis-ci.org/malukenho/speaknumber.svg?branch=master)](https://travis-ci.org/malukenho/speaknumber)
-[![Latest Stable Version](https://poser.pugx.org/malukenho/speaknumber/v/stable.png)](https://packagist.org/packages/malukenho/migratedb) [![Total Downloads](https://poser.pugx.org/malukenho/speaknumber/downloads.png)](https://packagist.org/packages/malukenho/migratedb) [![Latest Unstable Version](https://poser.pugx.org/malukenho/speaknumber/v/unstable.png)](https://packagist.org/packages/malukenho/migratedb) [![License](https://poser.pugx.org/malukenho/speaknumber/license.png)](https://packagist.org/packages/malukenho/migratedb)
+[![Latest Stable Version](https://poser.pugx.org/malukenho/speaknumber/v/stable.png)](https://packagist.org/packages/malukenho/speaknumber) [![Total Downloads](https://poser.pugx.org/malukenho/speaknumber/downloads.png)](https://packagist.org/packages/malukenho/speaknumber) [![Latest Unstable Version](https://poser.pugx.org/malukenho/speaknumber/v/unstable.png)](https://packagist.org/packages/malukenho/speaknumber) [![License](https://poser.pugx.org/malukenho/speaknumber/license.png)](https://packagist.org/packages/malukenho/speaknumber)
 
 ### Porque?
 
