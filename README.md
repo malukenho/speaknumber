@@ -5,14 +5,14 @@
 
 ### Porque?
 
-Você já se deu conta de como *cegos* navegam hoje na internet? já precisou adaptar algo em seu sistema para algum deficiente?
+Você já se deu conta de como *cegos* navegam hoje na internet? Já precisou adaptar algo em seu sistema para algum deficiente?
 Creio que não.
 
 Isso porque ninguém se importa muito com acessibilidade.
 Os cegos de hoje usam um leitor de tela, que é simplesmente um programa que lê
-tudo o que se passa na tela do usuário (que por sinal é uma área que ainda tem muito à evoluir).
+tudo o que se passa na tela do usuário (que por sinal é uma área que ainda tem muito a evoluir).
 
-O objetivo principal do *Speak Number* é facilitar a compreenção de números para cegos.
+O objetivo principal do *Speak Number* é facilitar a compreensão de números para cegos.
 
 Veja a leitura dessa imagem sem o Speak Number:
 
@@ -20,7 +20,7 @@ Veja a leitura dessa imagem sem o Speak Number:
 <img src="numer.png" alt="9856 pessoas" />
 <!-- nove, oito, cinco, seis pessoas -->
 ```
-O programa lê cada número separadamente o que dificulta a compreenção.
+O programa lê cada número separadamente o que dificulta a compreensão.
 Agora, imagine a leitura de um número como `100.000.000`. Você se perderia na contagem
 dos **zeros**, certo?
 
