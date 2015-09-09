@@ -3,7 +3,7 @@
   "description":       "Transcreve números para extenso.",
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.5.0"
+    "php": "~5.5|~7.0"
   },
   "require-dev": {
     "phpunit/phpunit":           "4.2.4",
