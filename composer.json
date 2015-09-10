@@ -13,8 +13,8 @@
     "ext-intl": "Allow speaking a number in many languages."
   },
   "autoload": {
-    "psr-0": {
-      "": "src/"
+    "psr-4": {
+      "Speak\\": "src/Speak/"
     }
   }
 }
