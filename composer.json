@@ -1,6 +1,18 @@
 {
   "name":              "malukenho/speaknumber",
   "description":       "Transcreve números para extenso.",
+  "type":              "library",
+  "homepage":          "https://github.com/malukenho/speaknumber",
+  "authors": [
+    {
+      "name":  "Jefersson Nathan",
+      "email": "malukenho@phpse.net"
+    },
+    {
+      "name":  "Andrey K. Vital",
+      "email": "andreykvital@gmail.com"
+    }
+  ],
   "minimum-stability": "dev",
   "require": {
     "php": "~5.5|~7.0"
