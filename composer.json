@@ -3,6 +3,7 @@
   "description":       "Transcreve números para extenso.",
   "type":              "library",
   "homepage":          "https://github.com/malukenho/speaknumber",
+  "license":           "MIT",
   "authors": [
     {
       "name":  "Jefersson Nathan",
