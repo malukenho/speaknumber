@@ -3,6 +3,11 @@
 [![Build Status](https://travis-ci.org/malukenho/speaknumber.svg?branch=master)](https://travis-ci.org/malukenho/speaknumber)
 [![Latest Stable Version](https://poser.pugx.org/malukenho/speaknumber/v/stable.png)](https://packagist.org/packages/malukenho/speaknumber) [![Total Downloads](https://poser.pugx.org/malukenho/speaknumber/downloads.png)](https://packagist.org/packages/malukenho/speaknumber) [![Latest Unstable Version](https://poser.pugx.org/malukenho/speaknumber/v/unstable.png)](https://packagist.org/packages/malukenho/speaknumber) [![License](https://poser.pugx.org/malukenho/speaknumber/license.png)](https://packagist.org/packages/malukenho/speaknumber)
 
+## Instalação
+```
+composer require malukenho/speaknumber
+```
+
 ### Por que?
 
 Você já se deu conta de como *cegos* navegam hoje na internet? Já precisou adaptar algo em seu sistema para algum deficiente?
