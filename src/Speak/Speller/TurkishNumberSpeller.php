@@ -63,12 +63,9 @@ class TurkishNumberSpeller extends AbstractNumberSpeller
         $return_count = count($return);
 
         // Fixes for 1001, 1500 etc. numbers Turkish translation.
-        if ($return_count >= 4 && $return_count <= 6)
-        {
-            if ($return[$return_count - 1] == 'bir')
-            {
+        if ($return_count >= 4 && $return_count <= 6) {
+            if ($return[$return_count - 1] == 'bir') {
                 unset($return[$return_count - 1]);
-
                 $return = array_values($return);
             }
         }
