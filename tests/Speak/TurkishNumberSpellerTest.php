@@ -18,9 +18,9 @@
 
 namespace Speak;
 
-use Speak\Speller\BrazilianNumberSpeller;
+use Speak\Speller\TurkishNumberSpeller;
 
-class BrazilianNumberSpellerTest extends \PHPUnit_Framework_TestCase
+class TurkishNumberSpellerTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
@@ -28,7 +28,7 @@ class BrazilianNumberSpellerTest extends \PHPUnit_Framework_TestCase
      */
     public function speakWithBigNumberShouldThrowException()
     {
-        $number = new Number(new BrazilianNumberSpeller());
+        $number = new Number(new TurkishNumberSpeller());
         $number->speak(PHP_INT_MAX * 2);
     }
 
@@ -38,7 +38,7 @@ class BrazilianNumberSpellerTest extends \PHPUnit_Framework_TestCase
      */
     public function speakWithNegativeNumberShouldThrownException()
     {
-        $number = new Number(new BrazilianNumberSpeller());
+        $number = new Number(new TurkishNumberSpeller());
         $number->speak(-1);
     }
 
@@ -48,17 +48,24 @@ class BrazilianNumberSpellerTest extends \PHPUnit_Framework_TestCase
      */
     public function speakShouldReturnStringRepresentationOfTheGivenNumber($number, $transcription)
     {
-        $this->assertEquals($transcription, (new Number(new BrazilianNumberSpeller()))->speak($number));
+        $this->assertEquals($transcription, (new Number(new TurkishNumberSpeller()))->speak($number));
     }
 
     public function provideTranscriptions()
     {
         return [
-            [1234, 'um mil duzentos e trinta e quatro'],
-            [100, 'cem'],
-            [1500, 'um mil e quinhentos'],
-            [10000, 'dez mil'],
-            [9856, 'nove mil oitocentos e cinquenta e seis']
+            [1001, 'bin bir'],
+            [2345, 'iki bin üç yüz kırk beş'],
+            [100, 'yüz'],
+            [2500, 'iki bin beş yüz'],
+            [10000, 'on bin'],
+            [10500, 'on bin beş yüz'],
+            [9856, 'dokuz bin sekiz yüz elli altı'],
+            [2578521952, 'iki milyar beş yüz yetmiş sekiz milyon beş yüz ' .
+                         'yirmi bir bin dokuz yüz elli iki'],
+            [1332578521952, 'bir trilyon üç yüz otuz iki milyar beş ' .
+                             'yüz yetmiş sekiz milyon beş yüz yirmi bir ' .
+                             'bin dokuz yüz elli iki']
         ];
     }
 }
