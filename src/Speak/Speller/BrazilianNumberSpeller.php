@@ -20,6 +20,7 @@ namespace Speak\Speller;
 
 /**
  * @author Andrey K. Vital <andreykvital@gmail.com>
+ * @author Isaac Henrique <isaachbnn@gmail.com>
  */
 class BrazilianNumberSpeller extends AbstractNumberSpeller
 {
