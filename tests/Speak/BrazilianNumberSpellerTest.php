@@ -54,11 +54,14 @@ class BrazilianNumberSpellerTest extends \PHPUnit_Framework_TestCase
     public function provideTranscriptions()
     {
         return [
-            [1234, 'um mil duzentos e trinta e quatro'],
-            [100, 'cem'],
-            [1500, 'um mil e quinhentos'],
-            [10000, 'dez mil'],
-            [9856, 'nove mil oitocentos e cinquenta e seis']
+            [1234, 'um mil e duzentos e trinta e quatro reais'],
+            [100, 'cem reais'],
+            [1500, 'um mil e quinhentos reais'],
+            [10000, 'dez mil reais'],
+            [9856, 'nove mil e oitocentos e cinquenta e seis reais'],
+            ['30.500,80', 'trinta mil quinhentos reais e oitenta centavos'],
+            [2000000, 'dois milhões de reais'],
+            ['2.000.000,02', 'dois milhões e dois centavos'],
         ];
     }
 }
