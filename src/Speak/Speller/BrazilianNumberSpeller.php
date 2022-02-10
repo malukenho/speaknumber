@@ -87,7 +87,7 @@ class BrazilianNumberSpeller extends AbstractNumberSpeller
         }
 
         $x = strlen($chunk) - 1;
-        $y = $chunk{ 0 };
+        $y = $chunk[0];
 
         $word = $this->getDictionary()[$x][$y];
         $next = substr($chunk, 1);
